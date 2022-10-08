@@ -1,6 +1,6 @@
 {
-  "name": "my-module",
-  "version": "1.0.0",
+  "name": "nantaui",
+  "version": "1.0.0-alpha.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,13 +21,17 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.11"
+    "@nuxt/kit": "^3.0.0-rc.11",
+    "@ant-design/icons-vue": "^6.1.0",
+    "@vueuse/nuxt": "^9.2.0",
+    "ant-design-vue": "^3.3.0-beta.3"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxt/schema": "^3.0.0-rc.11",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.11"
+    "nuxt": "^3.0.0-rc.11",
+    "nuxt-lodash": "^2.3.0"
   }
 }
