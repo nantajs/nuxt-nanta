@@ -1,9 +1,9 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import MyModule from '..'
+import nantaui from '..'
 
 export default defineNuxtConfig({
   modules: [
-    MyModule
+    nantaui
   ],
   myModule: {
     addPlugin: true
