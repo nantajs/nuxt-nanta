@@ -1,5 +1,5 @@
 {
-  "name": "nantaui",
+  "name": "nanta-ui",
   "version": "1.0.0-alpha.1",
   "license": "MIT",
   "type": "module",
@@ -33,5 +33,21 @@
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.11",
     "nuxt-lodash": "^2.3.0"
-  }
+  },
+  "description": "## Development",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sancaiwulian/nanta-ui.git"
+  },
+  "keywords": [
+    "nanta",
+    "nanta-ui",
+    "antd-v",
+    "vue"
+  ],
+  "author": "aborn.jiang",
+  "bugs": {
+    "url": "https://github.com/sancaiwulian/nanta-ui/issues"
+  },
+  "homepage": "https://github.com/sancaiwulian/nanta-ui#readme"
 }
