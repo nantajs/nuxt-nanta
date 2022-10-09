@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: [
     nantaui
   ],
-  myModule: {
+  nantaui: {
     addPlugin: true
   }
 })
