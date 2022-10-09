@@ -1,4 +1,10 @@
 {
   "private": true,
-  "name": "my-module-playground"
+  "name": "nanta-ui-playground",
+  "devDependencies": {
+    "nuxt-icon": "^0.1.6",
+    "less": "^4.1.3",
+    "unplugin-icons": "^0.14.9",
+    "unplugin-vue-components": "^0.22.7"
+  }
 }
