@@ -86,12 +86,12 @@ export function useForm (props?: Props): UseFormReturnType {
       return unref(formRef)?.getFieldsValue() as T
     },
 
-    setFieldsValue: async <T>(values: T) => {
+    setFieldsValue: async <T>(values: Recordable) => {
       const form = await getForm()
       form.setFieldsValue<T>(values)
     },
 
-    appendSchemaByField: async (schema: FormSchema, prefixField: string | undefined, first: boolean) => {
+    appendSchemaByField: async (schema: FormSchema, prefixField: string | undefined, first?: boolean) => {
       const form = await getForm()
       form.appendSchemaByField(schema, prefixField, first)
     },

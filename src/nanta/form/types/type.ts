@@ -8,7 +8,7 @@ export type FieldMapToTime = [string, [string, string], string?][];
 
 export interface FormActionType {
   submit: () => Promise<void>;
-  setFieldsValue: <T>(values: T) => Promise<void>;
+  setFieldsValue: <T>(values: Recordable) => Promise<void>;
   resetFields: () => Promise<void>;
   getFieldsValue: () => Recordable;
   clearValidate: (name?: string | string[]) => Promise<void>;

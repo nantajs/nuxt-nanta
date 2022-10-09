@@ -1,3 +1,5 @@
+import type { PropType as VuePropType } from "vue"
+
 export declare type Nullable<T> = T | null;
 
 export interface Fn<T = any, R = T> {

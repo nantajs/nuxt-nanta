@@ -1,23 +1,13 @@
 <template>
-  <Form
-    v-bind="getBindValue"
-    ref="formElRef"
-    :class="getFormClass"
-    :model="formModel"
-    @keypress.enter="handleEnterPress"
-  >
+  <Form v-bind="getBindValue" ref="formElRef" :model="formModel"
+    @keypress.enter="handleEnterPress">
     <Row v-bind="getRow">
       <slot name="formHeader" />
       <template v-for="schema in getSchema" :key="schema.field">
-        <NantaFormItem
-          :schema="schema"
-          :form-props="getProps"
-          :form-model="formModel"
-          :set-form-model="setFormModel"
-          :all-default-values="defaultValueRef"
-        />
+        <NantaFormItem :schema="schema" :form-props="getProps" :form-model="formModel" :set-form-model="setFormModel"
+          :all-default-values="defaultValueRef" />
       </template>
-      <NantaFormAction v-bind="getFormActionBindProps" @toggle-advanced="handleToggleAdvanced">
+      <NantaFormAction v-bind="getFormActionBindProps">
         <template v-for="item in ['resetBefore', 'submitBefore', 'advanceBefore', 'advanceAfter']" #[item]="data">
           <slot :name="item" v-bind="data || {}" />
         </template>
@@ -38,10 +28,11 @@ import { handleInputNumberValue, itemIsDateType, dateUtil, tryDeconstructArray, 
 import { isNullOrUnDef } from './utils/is'
 import { deepMerge } from './utils/util'
 import type { Nullable, Recordable } from './types/global'
-import { ref, unref, getCurrentInstance, reactive, computed, toRaw, watch, onMounted, nextTick } from 'vue'
+import { ref, unref, getCurrentInstance, reactive, computed, toRaw, watch, onMounted, nextTick, useAttrs } from 'vue'
 
 const props = defineProps(formPorps)
 const emits = defineEmits(['register', 'field-value-change', 'reset', 'submit'])
+const attrs = useAttrs()
 const propsRef = ref<Partial<FormProps>>({})
 const schemaRef = ref<Nullable<FormSchema[]>>(null)
 const formElRef = ref<Nullable<FormActionType>>(null)
@@ -80,17 +71,19 @@ const getSchema = computed((): FormSchema[] => {
   return res
 })
 
-async function setProps (formProps: Partial<FormProps>): Promise<void> {
+const getBindValue = computed(() => ({ ...attrs, ...props, ...unref(getProps) } as Recordable));
+
+async function setProps(formProps: Partial<FormProps>): Promise<void> {
   propsRef.value = deepMerge(unref(propsRef) || {}, formProps)
 }
 
-function getFieldsValue (): Recordable {
+function getFieldsValue(): Recordable {
   const formEl = unref(formElRef)
   if (!formEl) { return {} }
   return handleFormValues(toRaw(unref(formModel)))
 }
 
-async function resetFields (): Promise<void> {
+async function resetFields(): Promise<void> {
   const { resetFn } = unref(getProps)
   if (resetFn && isFunction(resetFn)) {
     await resetFn()
@@ -111,7 +104,7 @@ async function resetFields (): Promise<void> {
   emits('reset', toRaw(formModel))
 }
 
-async function setFieldsValue (values: Recordable): Promise<void> {
+async function setFieldsValue(values: Recordable): Promise<void> {
   const fields = unref(getSchema)
     .map(item => item.field)
     .filter(Boolean)
@@ -150,24 +143,24 @@ async function setFieldsValue (values: Recordable): Promise<void> {
   })
 }
 
-async function validateFields (nameList?: NamePath[] | undefined) {
+async function validateFields(nameList?: NamePath[] | undefined) {
   return unref(formElRef)?.validateFields(nameList)
 }
 
-async function validate (nameList?: NamePath[] | undefined) {
+async function validate(nameList?: NamePath[] | undefined) {
   return await unref(formElRef)?.validate(nameList)
 }
 
-async function clearValidate (name?: string | string[]) {
+async function clearValidate(name?: string | string[]) {
   await unref(formElRef)?.clearValidate(name)
 }
 
-function setFormModel (key: string, value: any) {
+function setFormModel(key: string, value: any) {
   formModel[key] = value
   emits('field-value-change', key, value)
 }
 
-function handleEnterPress (e: KeyboardEvent) {
+function handleEnterPress(e: KeyboardEvent) {
   const { autoSubmitOnEnter } = unref(getProps)
   if (!autoSubmitOnEnter) { return }
   if (e.key === 'Enter' && e.target && e.target instanceof HTMLElement) {
@@ -178,7 +171,7 @@ function handleEnterPress (e: KeyboardEvent) {
   }
 }
 
-async function handleSubmit (e?: Event): Promise<void> {
+async function handleSubmit(e?: Event): Promise<void> {
   e && e.preventDefault()
   const { submitFn } = unref(getProps)
   if (submitFn && isFunction(submitFn)) {
@@ -196,12 +189,12 @@ async function handleSubmit (e?: Event): Promise<void> {
   }
 }
 
-async function handleReset (e?: Event): Promise<void> {
+async function handleReset(e?: Event): Promise<void> {
   e && e.preventDefault()
   resetFields()
 }
 
-function handleFormValues (values: Recordable) {
+function handleFormValues(values: Recordable) {
   if (!isObject(values)) {
     return {}
   }
@@ -260,7 +253,7 @@ watch(
   }
 )
 
-function initDefault () {
+function initDefault() {
   const schemas = unref(getSchema)
   const obj: Recordable = {}
   schemas.forEach((item) => {
@@ -287,9 +280,9 @@ const formActionType: Partial<FormActionType> = {
   submit: handleSubmit
 }
 
-const instance = getCurrentInstance()
 onMounted(() => {
-  console.log('NantaForm inited, id', instance.uid)
+  const instance = getCurrentInstance()
+  console.log('NantaForm inited, id', instance?.uid)
   initDefault()
   emits('register', formActionType)
 })
