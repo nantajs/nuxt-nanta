@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Menu } from "./types/type";
+import { Menu, Nav } from "./types/type";
 import NavBar from "./default/components/NavBar.vue";
 import SideBar from "./default/components/SideBar.vue";
 import Footer from "./default/components/Footer.vue";
@@ -121,17 +121,17 @@ const onMenuSelected = (item) => {
   initBreadcrumbList(item.keyPath);
 };
 
-const navItems = [
+const navItems : Nav[]= [
   {
-    title: "Nav-1",
+    name: "Nav-1",
     key: "1",
   },
   {
-    title: "Nav-2",
+    name: "Nav-2",
     key: "2",
   },
   {
-    title: "Nav-3",
+    name: "Nav-3",
     key: "3",
   },
 ];
