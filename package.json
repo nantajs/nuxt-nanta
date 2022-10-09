@@ -19,7 +19,6 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "build": "webpack --progress --display-chunks -p"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
