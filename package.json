@@ -18,11 +18,12 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "build": "webpack --progress --display-chunks -p"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.11",
     "@ant-design/icons-vue": "^6.1.0",
+    "@nuxt/kit": "^3.0.0-rc.11",
     "@vueuse/nuxt": "^9.2.0",
     "ant-design-vue": "^3.3.0-beta.3"
   },
