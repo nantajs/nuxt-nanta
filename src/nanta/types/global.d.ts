@@ -1,4 +1,4 @@
-import type { PropType as VuePropType } from "vue"
+import type { ComputedRef, Ref, PropType as VuePropType } from "vue"
 
 export declare type Nullable<T> = T | null;
 
@@ -15,3 +15,7 @@ export declare type PropType<T> = VuePropType<T>;
 export declare interface Fn<T = any, R = T> {
   (...arg: T[]): R;
 }
+
+export type DynamicProps<T> = {
+  [P in keyof T]: Ref<T[P]> | T[P] | ComputedRef<T[P]>;
+};
