@@ -4,6 +4,7 @@ import type { FormProps, FormActionType, UseFormReturnType, FormSchema } from '.
 import type { DynamicProps } from '../../types/utils'
 import { isProdMode } from '../../utils/env'
 import { getDynamicProps, error } from '../../utils/util'
+import type { Nullable, Recordable } from '../../types/global'
 
 export declare type ValidateFields = (nameList?: NamePath[]) => Promise<Recordable>;
 

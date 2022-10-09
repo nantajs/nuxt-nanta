@@ -29,8 +29,9 @@
 <script lang="ts" setup>
 import { Form, Col } from 'ant-design-vue'
 import { propTypes } from '../../utils/propTypes'
+import type { PropType } from '../../types/global'
 import type { ColEx, ButtonOptions } from '../types/type'
-import { ref, unref, getCurrentInstance, reactive, computed, toRaw } from '#imports'
+import { ref, unref, getCurrentInstance, reactive, computed, toRaw } from 'vue'
 const props = defineProps({
   actionColOptions: {
     type: Object as PropType<Partial<ColEx>>,

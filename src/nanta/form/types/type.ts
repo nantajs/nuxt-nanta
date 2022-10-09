@@ -2,6 +2,8 @@ import type { ExtractPropTypes } from 'vue';
 import type { NamePath, RuleObject } from "ant-design-vue/lib/form/interface";
 import { FormProps } from "./formProps";
 import { FormItem } from "./formItem";
+import type { Recordable, PropType } from '../../types/global'
+
 export type FieldMapToTime = [string, [string, string], string?][];
 
 export interface FormActionType {

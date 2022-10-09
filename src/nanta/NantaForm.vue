@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { Form, Row } from 'ant-design-vue'
 import type { NamePath } from 'ant-design-vue/lib/form/interface'
-import { cloneDeep, set, isFunction, isObject, isArray } from 'lodash-es'
+import { cloneDeep, set, isFunction, isObject, isArray, isString } from 'lodash-es'
 import { FormSchema, formPorps, FormProps, FormActionType } from './form'
 import NantaFormItem from './form/components/NantaFormItem.vue'
 import NantaFormAction from './form/components/NantaFormAction.vue'
@@ -38,7 +38,7 @@ import { handleInputNumberValue, itemIsDateType, dateUtil, tryDeconstructArray, 
 import { isNullOrUnDef } from './utils/is'
 import { deepMerge } from './utils/util'
 import type { Nullable, Recordable } from './types/global'
-import { ref, unref, getCurrentInstance, reactive, computed, toRaw } from '#imports'
+import { ref, unref, getCurrentInstance, reactive, computed, toRaw, watch, onMounted, nextTick } from 'vue'
 
 const props = defineProps(formPorps)
 const emits = defineEmits(['register', 'field-value-change', 'reset', 'submit'])

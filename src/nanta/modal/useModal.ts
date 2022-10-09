@@ -5,6 +5,9 @@ import type {
   ReturnMethods,
   UseModalInnerReturnType,
 } from "./type";
+import type { Nullable, Fn } from '../types/global'
+import { isFunction, isEqual } from 'lodash-es'
+import { ref, unref, reactive, getCurrentInstance, computed, toRaw, watchEffect, nextTick } from 'vue'
 
 const dataTransfer = reactive<any>({});
 const visibleData = reactive<{ [key: number]: boolean }>({});

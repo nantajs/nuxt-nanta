@@ -1,4 +1,14 @@
 {
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "jsxPragma": "React",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "extends": [
     "@nuxtjs/eslint-config-typescript",
     "plugin:vue/vue3-recommended", 
@@ -6,11 +16,14 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
+    "space-before-function-paren": "off",
     "@typescript-eslint/no-unused-vars": [
       "off"
     ],
+    "no-console": "off",    
     "vue/multi-word-component-names": "off",
     "vue/no-v-for-template-key": "off",
-    "vue/no-v-model-argument": "off"
+    "vue/no-v-model-argument": "off",
+    "vue/require-explicit-emits": "off"
   }
 }

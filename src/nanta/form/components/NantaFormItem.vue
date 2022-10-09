@@ -1,10 +1,12 @@
 <script lang="tsx">
 import { Col, Divider, Form } from 'ant-design-vue'
 import type { Ref, PropType } from 'vue'
-import { cloneDeep, upperFirst } from 'lodash-es'
+import { isBoolean, upperFirst } from 'lodash-es'
 import type { FormSchema, FormProps } from '../index'
 import { useItemLabelWidth } from '../hooks/useLabelWidth'
 import { componentMap } from './componentMap'
+import type { Nullable, Recordable } from '../../types/global'
+import { ref, unref, getCurrentInstance, toRefs, computed, defineComponent } from 'vue'
 
 export default {
   props: {

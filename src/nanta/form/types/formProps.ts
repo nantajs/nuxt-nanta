@@ -2,6 +2,7 @@ import type { CSSProperties, PropType } from 'vue';
 import { FormSchema, FieldMapToTime, ColEx } from "./type"
 import { propTypes } from "../../utils/propTypes";
 import type { RowProps } from 'ant-design-vue/lib/grid/Row';
+import type { Fn, Recordable } from '../../types/global'
 
 export interface FormProps {
   actionColOptions?: Partial<ColEx>;
