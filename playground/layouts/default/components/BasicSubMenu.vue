@@ -16,7 +16,7 @@
         </span>
       </template>
       <!-- eslint-disable-next-line vue/no-v-for-template-key -->
-      <template v-for="childrenItem in item.children || []" :key="childrenItem.path">
+      <template v-for="childrenItem in item.children || []" :key="childrenItem.key">
         <BasicSubMenu v-bind="$props" :item="childrenItem" />
       </template>
     </SubMenu>

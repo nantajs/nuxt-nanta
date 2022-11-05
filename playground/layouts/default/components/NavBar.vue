@@ -26,7 +26,7 @@ defineProps({
   selectedKeys: Array as PropType<Array<string>>,
 });
 
-const onSelect = ({ item, key, selectedKeys }) => {
+const onSelect = ({ item, key, selectedKeys } : any) => {
   console.log("selectd");
   console.log(item);
 };
