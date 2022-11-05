@@ -4,7 +4,7 @@
 </template>
   
 <script lang="ts" setup>
-import { useForm, FormProps, Recordable } from "@nanta/ui";
+import { useForm, FormProps, Recordable, NantaForm } from "@nanta/ui";
 import { schemes } from "../table/data";
 import { computed } from 'vue'
 const [

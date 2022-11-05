@@ -2,7 +2,7 @@
   <div>
     <a-menu-item v-if="!menuHasChildren(item) && getShowMenu" :key="item.key">
       <template #icon>
-        <Icon :name="item.icon" />
+        <Icon :icon="item.icon" />
       </template>
       <span>
         <NuxtLink :to="item.path">{{ item.name }}</NuxtLink>
@@ -11,7 +11,7 @@
     <SubMenu v-if="menuHasChildren(item) && getShowMenu" :key="item.key" popupClassName="app-top-menu-popup">
       <template #title>
         <span>
-          <Icon :name="item.icon" />
+          <Icon :icon="item.icon" />
           {{ item.name }}
         </span>
       </template>
@@ -27,6 +27,7 @@ import { computed } from "vue";
 import { SubMenu } from 'ant-design-vue';
 import { Menu } from "../../types/type";
 import { PropType } from "~~/types/global";
+import { Icon } from "@nanta/ui"
 const props = defineProps({
   item: {
     type: Object as PropType<Menu>,
