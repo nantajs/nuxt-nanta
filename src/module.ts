@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { name, version } from '../package.json'
 
 export interface ModuleOptions {
   addPlugin: boolean
@@ -8,7 +9,8 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nanta',
+    name,
+    version,
     configKey: 'nanta'
   },
   defaults: {

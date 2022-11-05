@@ -43,13 +43,13 @@ const localMenus: Menu[] = [
         children: [
             {
                 name: 'Basic Table',
-                path: '/components/table/basic',
+                path: '/nanta/table/basic',
                 icon: 'ic:twotone-table-chart',
                 key: 'basicTable',
             },
             {
                 name: 'Basic Form',
-                path: '/components/form/basic',
+                path: '/nanta/form/basic',
                 icon: 'quill:creditcard',
                 key: 'basicForm'
             }
