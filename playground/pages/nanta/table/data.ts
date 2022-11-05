@@ -1,4 +1,4 @@
-import { FormSchema } from "nanta-ui";
+import { FormSchema } from "@nanta/ui";
 export const schemes: FormSchema[] = [
   {
     field: 'id',
