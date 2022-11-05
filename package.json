@@ -9,7 +9,7 @@
       "require": "./dist/module.cjs"
     }
   },
-  "main": "./dist/index.js",
+  "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
     "dist"
@@ -29,7 +29,7 @@
     "@nuxt/schema": "^3.0.0-rc.13",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.11",
+    "nuxt": "^3.0.0-rc.13",
     "nuxt-lodash": "^2.3.0"
   },
   "description": "## Development",

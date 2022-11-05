@@ -8,8 +8,8 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nanta-ui',
-    configKey: 'nantaui'
+    name: 'nanta',
+    configKey: 'nanta'
   },
   defaults: {
     addPlugin: true
