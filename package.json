@@ -1,6 +1,6 @@
 {
-  "name": "nanta-ui",
-  "version": "1.0.0-alpha.1",
+  "name": "nuxt-nanta",
+  "version": "0.1.0-rc.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,14 +21,12 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^6.1.0",
-    "@nuxt/kit": "^3.0.0-rc.11",
-    "@vueuse/nuxt": "^9.2.0",
-    "ant-design-vue": "^3.3.0-beta.3"
+    "@nanta/ui": "^0.1.0-rc.8",
+    "@nuxt/kit": "^3.0.0-rc.13"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
-    "@nuxt/schema": "^3.0.0-rc.11",
+    "@nuxt/schema": "^3.0.0-rc.13",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.11",
@@ -42,12 +40,13 @@
   "keywords": [
     "nanta",
     "nanta-ui",
-    "antd-v",
-    "vue"
+    "nuxt-nanta",
+    "vue",
+    "nuxt"
   ],
   "author": "aborn.jiang",
   "bugs": {
-    "url": "https://github.com/sancaiwulian/nanta-ui/issues"
+    "url": "https://github.com/nantajs/nuxt-nanta/issues"
   },
-  "homepage": "https://github.com/sancaiwulian/nanta-ui#readme"
+  "homepage": "https://github.com/nantajs/nuxt-nanta#readme"
 }
