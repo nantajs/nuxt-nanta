@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-nanta",
+  "name": "@nanta/nuxt-nanta",
   "version": "0.1.0-rc.1",
   "license": "MIT",
   "type": "module",
